@@ -84,7 +84,7 @@ exports.checkStatus = async (req, res, next) => {
                                 if(cUpdate){
                                  
                                     foundFlag = true;
-                                    res.status(201).json({trigger:true,tempature,humidity,weather,...cUpdate});
+                                    res.status(201).json({shutdown:0,tempature,humidity,weather,...cUpdate});
                                 }
                             }
                             break;
@@ -98,7 +98,7 @@ exports.checkStatus = async (req, res, next) => {
                                 },{where:{UserId:req.user.userid}});
                                 if(cUpdate){
                                     foundFlag = true;
-                                    res.status(201).json({trigger:true,tempature,humidity,weather,...cUpdate});
+                                    res.status(201).json({shutdown:0,tempature,humidity,weather,...cUpdate});
                                 }
                             }
                         case 3:
@@ -115,7 +115,7 @@ exports.checkStatus = async (req, res, next) => {
                                 },{where:{UserId:req.user.userid}});
                                 if(cUpdate){
                                     foundFlag = true;
-                                    res.status(201).json({trigger:true,tempature,humidity,weather,...cUpdate});
+                                    res.status(201).json({shutdown:0,shutown:0,tempature,humidity,weather,...cUpdate});
                                 }
                             }
                             break;
