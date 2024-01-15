@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 
 // Veritabanı bağlantısı oluşturun
-const sequelize = new Sequelize('proje_iot', 'fecriati', 'mytestpasswordhere2023', {
+const sequelize = new Sequelize('proje_iot', 'fecriati', 'mytestpasswordhere2024-0001', {
   host: 'localhost',
   dialect: 'mysql', // Veritabanı türünü seçin (örneğin, PostgreSQL, MySQL, vb.)
   timezone: '+03:00' // İstanbul için GMT+3
