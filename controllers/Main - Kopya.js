@@ -59,7 +59,7 @@ exports.checkStatus = async (req, res, next) => {
 
             let currentDate = new Date();
             let lastUpdateDate = new Date(combi.updatedAt);
-            if(1==1){
+            if(currentDate - lastUpdateDate > 1000*60*60){
                 //1 saat geçmiş işlemleri başlatalım.
                 
             
@@ -115,7 +115,7 @@ exports.checkStatus = async (req, res, next) => {
                                 },{where:{UserId:req.user.userid}});
                                 if(cUpdate){
                                     foundFlag = true;
-                                    res.status(201).json({shutdown:0,tempature,humidity,weather,...cUpdate});
+                                    res.status(201).json({shutdown:0,shutown:0,tempature,humidity,weather,...cUpdate});
                                 }
                             }
                             break;
@@ -135,7 +135,7 @@ exports.checkStatus = async (req, res, next) => {
                             shutdown:1
                         },{where:{UserId:req.user.userid}});
                         if(cUpdate){
-                            res.status(201).json({cTime:new Date(),tempature,humidity,weather,wind_speed,shutdown:1,...cUpdate});
+                            res.status(201).json({cTime:new Date(),tempature,humidity,weather,wind_speed,...cUpdate});
                         }
                     }else{
                         //Zaten kapalıydı 1 saat geçmiş kurallardan tetiklenen yok kapalı devam edecek. Saat güncellemiyoruz.
